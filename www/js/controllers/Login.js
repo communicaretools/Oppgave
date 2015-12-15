@@ -72,17 +72,5 @@ angular.module("ReConnectApp.controllers")
 			function logout(){
 				loginManager.logout(onLogoutSuccess);
 			};
-
-            function info(){
-                var notImplemented = $ionicPopup.alert({
-                    title: "Info - Logg inn",
-                    template: resources.get('_notImplemented')
-                });
-                notImplemented.then(function(){ });
-            };
-
-            $scope.$on('RCA.login', function () {
-                info();
-            });
 		}
 ]);
