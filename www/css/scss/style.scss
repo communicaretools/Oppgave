@@ -1,0 +1,45 @@
+
+@import '_variables';
+@import '_mixins';
+@import '_functions';
+
+//these two files need to be imported after variables.scss
+@import '../../lib/ionic/scss/ionic';
+@import '../../lib/ionic/scss/ionicons/ionicons';
+
+/*
+# Components
+*/
+@import '_buttons';
+@import '_components';
+@import '_layout';
+
+/*
+# Layout
+Specific rules to overall layout, and aren't designed to be reused.
+*/
+@import "_form";
+@import '_modal';
+@import '_popup';
+
+/*
+# Features
+Designed specifically for certain parts of the app, and shouldn't be used elsewhere.
+*/
+@import '_exercises';
+@import '_forum';
+@import '_home';
+@import '_intro';
+@import '_menu';
+@import '_login';
+@import '_profile';
+@import '_registration';
+@import '_messages';
+
+
+
+//------------------------------------------------------------------
+//large screen
+@media only screen and (min-width : 768px) {
+
+}

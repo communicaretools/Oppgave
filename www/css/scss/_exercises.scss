@@ -1,0 +1,28 @@
+.sound-details {
+	text-align: center;
+}
+
+.sound-range {
+	padding: 0;
+}
+
+.sound-volume {
+	color: $colorTextLight;
+}
+
+
+//-------------------------------------------------------------
+//large screen
+//-------------------------------------------------------------
+//large screen
+@media only screen and (min-width : 768px) {
+	.sound-item{
+		padding: 2rem 10rem;
+	}
+	.sound-volume {
+		color: $colorTextLight;
+		width: 50%;
+	}	
+		
+}
+    

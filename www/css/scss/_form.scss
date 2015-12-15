@@ -1,0 +1,12 @@
+.item-stacked-label.item-input-wrapper {
+	input {
+		width: 100%;
+	}
+}
+textarea.content {
+	min-height: 5rem;
+}
+
+.has-error {
+	border: 1px solid red;
+}

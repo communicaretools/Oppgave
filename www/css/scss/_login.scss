@@ -1,0 +1,16 @@
+.login {
+	background-color: $colorMain;
+	.login-box {
+	    display: -webkit-flex;
+    	-webkit-flex-direction: column;
+		background-color: $colorMain;
+		margin: 2rem;
+		padding: 2rem;
+		label {
+			background-color: white;			
+		}
+		button {
+		    margin-top: 2rem;
+		}
+	}
+}

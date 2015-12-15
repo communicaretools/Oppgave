@@ -1,0 +1,43 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="right">
+          <button ng-if="RCA.isLoggedIn" class="button" ng-click="RCA.showIntroModal()" r="_help">
+          </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu width="220" side="left" >
+    <!--<ion-header-bar class="bar-stable">
+      <h1 class="title">Hjem</h1>
+    </ion-header-bar>-->
+    <ion-content scroll="false">
+      <ion-list class="menu-list" ng-if="RCA.isLoggedIn">
+        <ion-item class="menu-item" ng-repeat="item in RCA.menuItems" ui-sref="{{item.state}}" ng-class="{active:RCA.checkActive(item)}" menu-close>
+          <span ng-bind="item.name"></span>
+        </ion-item>
+
+        <!--Extra log out button-->
+        <ion-item class="menu-item item-complex menuLogin" menu-close ng-controller="LoginCtrl as login">
+          <a class="item-content" ng-click="login.logout()" r="_logOut"></a>
+        </ion-item>
+      </ion-list>
+      <ion-list ng-if="!RCA.isLoggedIn">
+        <ion-item class="menu-item item-complex" ui-sref="RCA.home" menu-close>
+          <span r="menuHome"></span>
+        </ion-item>
+        <ion-item class="menu-item item-complex menuLogin" ui-sref="RCA.login" menu-close>
+          <span r="_logIn"></span>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

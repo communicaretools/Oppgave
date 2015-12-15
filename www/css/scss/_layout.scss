@@ -1,0 +1,269 @@
+.button-bar {
+	z-index: 9999;
+}
+
+.checkbox-group {
+	margin-top: 1rem;
+}
+
+.clearer {
+    border: 2px solid $colorMain;
+}
+
+.content-wrap {
+	padding: 1em 2rem;
+	&.first {
+		padding-top: 2rem;
+	}
+
+	&.pure-text {
+		p {
+			margin-bottom: 2rem;
+		}		
+	}
+}
+
+.content-under-expanded-header {
+	top: 200px;
+}
+
+.expanded-header {
+	padding: 0;
+	overflow: auto;
+	height: 200px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: $colorTitle;
+}
+
+h1 {
+	font-size: 1.8rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+.help-text {
+	padding: 2rem;
+}
+
+html, body {
+	height: 100%;
+}
+
+//This set of rules is developed for the forum but is placed here because it should also fit the other features of the app
+ion-list.list {
+	.item {
+		background-color: $colorBackground ;//Y		
+		.item-content {
+			background-color: $colorBackground ;//Y				
+		}		
+		&.newItem {
+			background-color: $colorNewItemBackground;
+			h2 {
+				font-weight: bold;
+			}
+			.item-content {
+				background-color: $colorNewItemBackground;
+		
+				h2 {
+					font-weight: bold;
+				}
+			}
+
+		}
+		h2 {
+			color: #333;
+			font-size: 1.1rem;
+			white-space: normal;
+		}
+		&.item-complex {
+			.item-content {
+				padding-right: 1rem;
+			}
+		}
+		&.item-icon-right {
+			.item-content {
+				padding-right: 3rem;
+			}		
+		}		
+	}
+}
+
+ion-modal-view {
+	ion-content {
+		background-color: $colorBackground ;
+	}
+}
+
+ion-nav-view {
+	ion-side-menus  {
+		ion-side-menu {
+			border-right: 1px solid $colorDivider;
+		}
+		ion-side-menu-content.menu-content {
+			border: none;
+		}		
+	}
+} 
+
+ion-side-menu-content {
+	ion-view {
+		ion-content {
+			background-color: $colorBackground ;			
+		}
+	}
+}
+
+.item-floating-label.item.item-input {
+	background-color: white;//Y
+}
+
+.item-icon-right {
+	.ion-chevron-right {
+		color: $colorText;
+	}
+}
+
+.item-note {
+	color: $colorTextLight;
+}
+
+//delete header border
+.nav-bar-block .bar-header {
+    border: none;
+    background: none;
+    background-color: $colorMain;
+}
+
+.preferences-Section {
+	margin-bottom: 2rem;
+}
+
+.slider {
+	height:100%;
+	.slider-slide {
+		display: -webkit-flex;
+		-webkit-flex-direction: column;
+		-webkit-justify-content: center;
+		-webkit-align-items: center;
+
+	}
+}
+
+.centerized {
+	display: -webkit-flex;
+	-webkit-align-items: center;	
+	-webkit-flex-direction: column;
+	-webkit-justify-content: center;
+}
+
+.tab-item {
+	text-transform: uppercase
+}
+
+.tabs-top.tabs-striped .tab-item.tab-item-active,
+.tabs-top.tabs-standard .tab-item.tab-item-active, {
+	border-color: $colorMain;	
+	color: $colorTitle;
+	font-weight: bold;
+}
+
+//-------------------------------------------------------------
+//large screen
+//-------------------------------------------------------------
+//large screen portrait
+@media only screen and (min-width : 768px) {
+
+
+	//header
+	ion-nav-bar .nav-bar-block ion-header-bar  {
+		display: -webkit-flex;
+		-webkit-flex-direction: row;
+		-webkit-align-items: center;
+
+		//align navicon
+		.buttons.buttons-left.header-item {
+			.ion-navicon {
+		    	padding-left: 1rem;
+			}
+
+		}
+
+		//back button
+		.button.back-button.buttons.button-clear.header-item {
+			margin-left: 1rem;
+		}
+
+		//title
+		.title.title-center.header-item {
+			font-size: 1.5rem;
+			font-weight: normal;
+			margin: 0 auto;
+		}
+	}
+	h1 {
+		font-size: 2.5rem;
+	}
+	h2 {
+		font-size: 1.8rem;
+	}	
+/*
+//All this scope is disabled  due to problem it causes in ios os8. We need to continue with it when we have more time
+
+	//Header height adjustments. Devided in $menuItemsNr to fit the height of first menu item (consider)
+	.nav-bar-block {
+		height: $headerLargeHeight;
+
+	}
+	.nav-bar-block ion-header-bar {
+		height: 100%;
+	}
+	.has-header {
+		top: $headerLargeHeight;
+		//when tabs
+		&.has-tabs-top {
+			top: calc( #{$headerLargeHeight} + 49px);
+		}
+	}
+
+	.tab-nav.tabs {
+		top: $headerLargeHeight;
+	}
+
+
+	.expanded-header {
+		top: $headerLargeHeight;
+	}
+	*/
+	.content-under-expanded-header {
+		top: calc( #{$headerLargeHeight} + 200px);
+	}
+
+	.content-wrap.pure-text,
+	 .content-wrap.pure-text.first {
+		display: -webkit-flex;
+		-webkit-flex-direction: column;
+		-webkit-align-items: center;
+		h1,
+		p {
+			width: 70%;
+		}	
+	}
+
+}
+
+//large screen landscape
+@media only screen and (min-width : 768px) and (orientation: landscape) {
+	//hide menu icon
+	ion-nav-bar .nav-bar-block ion-header-bar  {
+		.buttons.buttons-left.header-item .left-buttons .button.button-icon.button-clear.ion-navicon {
+			//display: none;
+		}
+	}
+}

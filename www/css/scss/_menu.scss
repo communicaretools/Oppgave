@@ -1,0 +1,93 @@
+.menu ion-content {
+	background-color: $colorMenuItemBackground;
+}
+.menu-list {
+	height: 100%;
+}
+.menu-list .list {
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+	height: 100%;
+}
+.menu-item.item {
+	-webkit-align-content: center;
+	-webkit-align-items: center;
+	background-color: $colorMenuItemBackground;
+	border-color: #444;
+	color: $colorMain;
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-flex: 1;
+	-webkit-justify-content: left;
+	padding-left: 1rem;
+
+
+	a.item-content {
+		background-color: #333;
+		/*to add icons to menu items:*/
+		/*
+		background-image: url('images/registration-list/icon-smiley-white.png');
+		background-repeat: no-repeat;
+		background-position: center left;
+		padding-left: 4rem;
+		*/
+	}
+	&.active {
+		background-color: $colorMain;
+		border: none;
+		a.item-content {
+			background-color: $colorMain;
+			color: $colorText;
+			font-weight: bold;
+		}			
+	}
+	&.menuLogin {
+		border: solid 1px $colorMain;
+	}
+}
+.item.activated {
+	background-color: $colorMain;
+	border-color: $colorDivider;
+	a.item-content {
+		background-color: $colorMain;
+		color: $colorMain;	
+		font-weight: bold;	
+	}
+}
+
+ion-side-menus ion-side-menu-content.menu-content.pane {
+	//border-left: 1px solid $colorDivider; // caused border on entire view
+	box-shadow: none;
+}	
+
+//------------------------------------------------------------------
+//large screen
+@media only screen and (min-width : 768px) and (orientation: landscape) {
+
+	//transition on menu items
+	.menu-item {
+	    transition: background-color 1s;
+		a.item-content {
+			transition: background-color 1s;
+		}
+	}
+
+	//ipad menu
+	.menu-list .list {
+	    background-color: #f6f6f6;
+        -webkit-justify-content: center;
+	}
+	.item.activated {
+	    background-color: #f6f6f6;
+	    border-color: #f6f6f6;
+	}
+
+	.menu-item {
+	    border: none;		
+	    padding: 0.5rem;
+	    padding-left: 2rem;
+		-webkit-flex: none;
+		-webkit-justify-content: -webkit-flex-start;
+	}
+
+}

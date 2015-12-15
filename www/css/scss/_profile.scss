@@ -1,0 +1,49 @@
+.avatar-list {
+	display: -webkit-flex;
+    padding: 3rem;
+    -webkit-flex-flow: row wrap;
+    -webkit-justify-content: center;  
+    .avatar {
+    	padding: 1rem;
+    	img {
+     		border-radius: 50%;   		
+    	}    	
+    }
+}
+
+.bar {
+	padding-left: 0;
+}
+
+.error {
+	//change border-color: reddish
+	border-color: red;
+}
+
+.user-image-name {
+	img {
+		border: 4px solid $colorDivider;
+		border-radius: 50%;
+		margin-bottom: 1rem;
+		//width: 30%;
+	}
+	h4 {
+		margin-top: 0;
+	}
+	border-bottom: 1px solid $colorDivider;
+	border-top: 1px solid $colorDivider;
+	padding: 1em 0;		
+}
+
+.user-name,
+.user-image {
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	-webkit-align-items: center;
+	-webkit-justify-content: space-between
+}
+.user-name {
+	border-top: 1px solid $colorDivider;
+    margin-top: 1rem;	
+    padding-top: 1rem;
+}

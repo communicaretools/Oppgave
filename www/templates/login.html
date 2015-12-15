@@ -1,0 +1,30 @@
+<ion-view hide-back-button="true">
+    <ion-nav-title r="loginTitle"></ion-nav-title>
+    <ion-content class="login">
+        <div ng-if="RCA.isLoggedIn">
+            <div>
+                <div class="padding button-bar">
+                    <button class="button" ng-click="login.logout()" r="_logOut">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="login-box list list-inset" ng-if="!RCA.isLoggedIn">
+        <form name="loginForm" novalidate>
+            <label class="item item-input item-floating-label" ng-class="{'has-error': login.informationText || loginForm.username.$invalid && loginForm.$submitted}">
+                <span class="input-label" r="_userName"></span>
+                <input name="username" type="text" ng-model="login.credentials.username" r="_userName" focus-me required/>
+            </label>
+            <label class="item item-input item-floating-label" ng-class="{'has-error': login.informationText || loginForm.password.$invalid && loginForm.$submitted}">
+                <span class="input-label" r="_password"></span>
+                <input name="password" type="password" ng-model="login.credentials.password" r="_password" required/>
+            </label>
+                <div ng-show="login.informationText" class="error-message">
+                <p>{{login.informationText}}</p>
+            </div>
+                <button type="submit" class="button button-full button-dark-bg" ng-click="login.login(login.credentials.username, login.credentials.password)" r="logIn"></button>
+            </div>
+        </form>
+        </div>
+    </ion-content>
+</ion-view>

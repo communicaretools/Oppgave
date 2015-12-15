@@ -1,0 +1,224 @@
+.center-mood {
+    position: absolute;
+    //top: calc(50% - 25px);
+    //left: calc(50% - 25px);
+    top: 90px;
+    left: 90px;    
+    height: 70px;
+    width: 70px;
+    line-height: 50px;
+    //border-style: solid;
+    //border-width: 1px;
+    //border-radius: 200%;
+}
+
+.mood {
+    @extend %mood-style;
+    @include moods;
+}
+
+
+%mood-style {
+  width: 250px;
+  height: 250px;
+  //align center of the div
+  margin: 1em auto;
+  //make sure everything stays within the div
+  position: relative;
+    background-image: url("images/mood-bg/mood-bg.png");
+
+}
+
+@for $i from 1 through 12 {
+    .mood-image-#{$i} {
+        background-image: url($moodImagesPathBig + "big-"+ "#{$i}.png");
+        background-repeat: no-repeat;
+        height: 105%;
+        width: 105%;
+        //margin-left: auto;
+        //margin-right: auto;
+        //margin-top: $moodSize/4;
+    }
+}
+
+
+.range {
+    input{  
+        &::-webkit-slider-thumb:before {
+            background: $colorMain;
+        }
+        &::-ms-fill-lower{
+            background: $colorMain;
+        }
+    }
+
+}
+
+.range-selected {
+    border: 1px solid $colorMain;
+    color: $colorText;
+    font-weight: bold;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    min-width: 2.5rem; 
+    text-align: center;
+}
+
+.registration-daily {
+    label {
+        font-weight: bold;
+        white-space: normal;
+    }
+    input {
+        margin: 1em 0;
+    }
+
+    input[type="text"] {
+        border: 1px solid $colorDivider;
+        padding: 1rem;
+    }
+    input[type="number"] {
+        min-width: 10rem;
+    }   
+}
+
+.reg-history {
+    .title {
+        border: none;
+        text-align: center;
+        h1 {
+            font-weight: bold;
+            margin-top: 1.5rem;
+        }        
+    }
+    .registration-item { 
+        .item-content{
+            display: -webkit-flex; 
+            -webkit-flex-direction: row;
+            -webkit-align-items: center;
+            .item-note {
+                margin-right: 1rem;
+            }
+        }
+        .text {
+            -webkit-flex: 2;            
+            margin-left: 1rem;
+            margin-right: 1rem;
+            color: grey;
+        } 
+        .extras {
+            display: -webkit-flex; 
+            -webkit-flex-direction: row;
+        }    
+    }    
+}
+
+.registration-menu-item {
+    display: -webkit-flex; 
+    padding: 3rem;
+    -webkit-flex-direction: column;
+    button {
+        align-self: flex-start;
+    }
+    h2 {
+        font-weight: bold;
+    }
+    .confirmation {
+        border-bottom: 1px solid $colorDivider;        
+        display: -webkit-flex;
+        margin-bottom: 0.5rem;        
+        padding-bottom: 0.5rem;        
+        -webkit-flex-direction: row;
+        -webkit-align-items: baseline;
+        .app-checkmark {
+            //background-color: $colorMain;
+            border: none;
+            border-radius: 50%;
+            //color: white;
+            margin-right: 1rem;
+        }
+        span {
+            color: #999;
+        }
+    }    
+    .registration-menu-item-content {
+        display: -webkit-flex;
+        -webkit-align-items: center;    
+        -webkit-flex-direction: row;
+        -webkit-justify-content: space-between;
+        button {
+            -webkit-align-self: flex-end;
+        }
+
+        .details {
+            -webkit-flex: 2;
+        }
+    }  
+}
+
+.smiley-view {
+    display: -webkit-flex;
+    padding: 2rem;     
+    -webkit-flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    .text {
+        text-align: center;
+        white-space: normal;
+    }
+    img {
+        padding: 2rem;
+        width: 150px;;
+    }
+}
+
+.range-view {
+    dl {
+        display: -webkit-flex;
+        padding: 2rem;         
+        -webkit-flex-direction: row;
+        dt {
+            -webkit-flex: 7;
+            margin-right: 1rem;
+            white-space: normal;
+        } 
+        dd {
+            color: white;
+        } 
+    }
+}
+
+
+//large screen landscape
+@media only screen and (min-width : 768px) {
+    .main-boxes {
+        display: -webkit-flex;
+        padding: 2rem;    
+        -webkit-flex-direction: row;
+        width: 100%;
+    }
+    .registration-menu-item {     
+        width: 100%;
+        &>button {
+            margin-top: 2rem;
+            -webkit-align-self: center;
+        }
+        header {
+            -webkit-align-self: center;
+            h2 {
+                text-align: center;
+            }
+        }        
+    }
+    .reg-history {
+        .item {
+            padding: 0 2rem;
+            &.title {
+                padding: 1em 2rem;
+            }
+        }
+    }    
+}
+
+
+

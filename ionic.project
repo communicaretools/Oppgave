@@ -1,0 +1,10 @@
+{
+  "name": "Oppgave",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://sps.rr-research.no/test/connectApi"
+    }
+  ]
+}

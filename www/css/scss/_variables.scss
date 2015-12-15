@@ -1,0 +1,52 @@
+//COLORS
+//$colorMain: #73e0cc;//light blue
+$colorMain: #f7a000;//yellow
+//--------------------------------
+$colorBackground: #f1f1f1;
+$colorButton: #645A49;
+$colorCitation: #f8f8f8;
+$colorDivider: #e6e6e6;
+$colorFooter: #f8f8f8;
+$colorMenuItemBackground: #333;
+$colorNewItemBackground: darken($colorBackground, 4%);
+$colorSecondaryBackground: #f8f8f8;
+$colorText: #333;
+$colorTextLight: #666;
+$colorTitle: #333;
+
+
+
+//Adjust icon path based on compass config file location
+$ionicons-font-path: "../lib/ionic/fonts";
+
+
+//VARIABLES
+$menuItemsNr: 8;
+$headerLargeHeight: percentage(1/$menuItemsNr);
+$moodSize: 32px; 
+$moodImagesPath: "images/moods/small/";
+$moodImagesPathBig: "images/moods/big/";
+$image-bottom-fade: url('images/bottom-fade.png');
+
+//OVERRIDE LIB VARIABLES
+$checkbox-on-bg-default: $colorButton;
+$checkbox-on-border-default: $colorButton;
+$input-color-placeholder: $colorTextLight;
+$range-slider-width: 40px;
+$range-slider-height: 45px;
+$tabs-height: 70px;
+$tabs-striped-border-width: 4px;
+
+@mixin responsive-lib-variables {}
+
+//------------------------------------------------------------------
+//large screen
+@media only screen and (min-width : 768px) {
+	//for some reason - this doesnt work. Variable inside media queries??
+	$range-slider-width: 100px;
+	$range-slider-height: 100px;	
+	/*Variables are transformed by the compiler before being sent to the client as opposed to media queries that are interpreted by the browser's CSS engine as well as conventional selectors (id, class, tag).
+	http://stackoverflow.com/questions/18593547/compass-scss-variables-media-queries
+	*/
+
+}

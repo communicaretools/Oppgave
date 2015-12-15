@@ -1,0 +1,157 @@
+button.button {
+	@include button;
+}
+button.button.secondary {
+	@include button-secondary;
+}
+
+button.button.button-dark-bg {
+	@include button;
+}
+
+button.button.daily,
+button.button.smiley {
+	padding-left: 3rem;
+	background-position: left;
+	background-repeat: no-repeat;
+}
+
+.button.button-clear.button-clear {
+	color: $colorTextLight;
+}
+
+button.button.daily {
+	background-image: url('images/registration-list/icon-daily-white.png');
+    padding-left: 4rem;	
+}
+
+button.button.smiley {
+	background-image: url('images/registration-list/icon-smiley-white.png');
+    padding-left: 4rem;	
+}
+
+button.button.button-icon {
+	background: none;
+	border: none;	
+	color: $colorMain;
+}
+
+button.button.button-small {
+	padding: 0 0.5rem;
+}	
+
+button.button.button-icon.ion-navicon {
+	background-color: $colorMain;
+	border: none;	
+	color: $colorText;		
+}
+
+button.button.button-outline.button-outline {
+	color: $colorTextLight;
+}
+
+button.button.button-sound {
+	background-color: white;
+	border: none;
+	color: $colorText;
+}
+
+.bar.bar-header {
+	button.button {
+		background-color: $colorMain;
+		border: none;
+		color: $colorText;
+	}
+}
+
+.modal .bar.bar-header {
+	button.button {
+		background-color: white;
+	}
+}
+
+.button-bar {
+	.button {
+		@include button;
+		&.secondary {
+			@include button-secondary;
+		}
+		&.more {
+			@include button-secondary;
+			max-width: 3rem;
+		}
+		&.more::before{
+			text-align: center;
+			font-size: 2.5rem;
+			margin-left: -5px;
+		}
+	}
+}
+
+form {
+	.button {
+		@include button;
+	}
+}
+
+.item-options {
+	display: -webkit-flex;
+	-webkit-align-items: flex-start;
+	-webkit-flex-direction: column;
+}
+.item-options ion-option-button.button {
+	@include button;
+
+	border: none;
+	height: 30px;
+    margin: 0.5rem;
+    &.delete {
+		background-color: red;
+    }
+}
+
+.button.active,
+.button.activated {
+	background-color: darken($colorMain, 30%);
+	border: none;
+	color: white;
+  	box-shadow: none;
+  }
+
+//float (write new)
+.float-button {
+	background-color: $colorButton;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	bottom: 1em; /* Adjust to where you want it */
+	box-shadow: 3px 3px 5px 1px #666;
+	color: white;
+	font-size: 2rem;
+	padding: 1em;
+	position: fixed;
+	width: 1em;
+	right: 1em; /* Adjust to where you want it */
+	z-index: 9999;
+	.height-fix {
+		margin-top: 100%;
+		.content {
+			position: absolute;
+			left: 0;
+			top: 0.5em;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+		}
+	}	
+}
+
+
+
+
+@media only screen and (min-width : 768px) {
+
+	.float-button {
+		font-size: 3em;
+	}
+}

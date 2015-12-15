@@ -1,0 +1,72 @@
+.avoid-clicks {
+  pointer-events: none;
+}
+
+.error-message {
+	background-color: white;
+	border: 1px solid $colorDivider;
+	margin: 1em 0 0 0;
+	padding: 1rem;
+	text-align: center;
+	p {
+		color: red;
+	}
+}
+
+.RCA-select {
+	margin: 1rem;
+	select {
+		margin-left: 1em;
+		padding: 0.5rem;
+	}
+}
+p.new {
+	background-color: $colorMain;
+	color: $colorText;
+	display: inline-table;
+    padding: 0.2rem 0.9rem;
+	font-weight: bold;
+}
+
+p.RCA-badge {
+	background-color: #ccc;
+	border: none;
+	border-radius: 50%;
+	color: $colorText;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;	
+}
+
+.user-feedback {
+	background-color: $colorMain;
+	bottom: 1em; /* Adjust to where you want it */
+	text-align: center; 
+	box-shadow: 3px 3px 5px 1px #666;
+	color: black;
+	padding: 1em;
+	position: absolute;
+	width: 100%;
+	z-index: 9999;
+	.height-fix {
+		margin-top: 100%;
+		.content {
+			position: absolute;
+			left: 0;
+			top: 0.5em;
+			height: 100%;
+			width: 100%;
+			text-align: center;
+		}
+	}	
+}
+
+.transperancy-bottom {
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0), rgba(255,255,255,0.7), rgba(255,255,255,1));    
+    bottom: 0;
+    height: 25%;     
+    position: fixed;    
+    width: 100%;
+    z-index: 9999; 
+}

@@ -1,0 +1,52 @@
+<ion-view view-title="" hide-back-button="true">
+	<ion-content class="home" scroll="false">
+	
+		<div class="home-header">
+			<!--Before login-->
+			<div ng-if="!RCA.isLoggedIn" class="home-header-logged-out">
+				<button class="button button-dark-bg" ui-sref="RCA.login" r="logIn"></button>
+			</div>
+
+			<!--After login-->
+			<div ng-if="RCA.isLoggedIn"  class="home-header-logged-in">
+				<div class="userimage">
+					<img ng-src="css\images\avatars\{{home.user.avatar}}.png" alt="">
+				</div>
+				<div class="username">
+					<h1 ng-bind="home.user.userName"></h1>
+				</div>				
+			</div>
+		</div>
+
+		<div class="home-items">
+			
+			<!--Before login-->
+			<div class="home-item" ng-repeat="item in home.homeItems" ng-if="!RCA.isLoggedIn" ng-click="home.showLoginInfo(item.state)">	
+				<div class="home-icon-container">	
+					<img  class="home-icon" ng-src="css/images/home/{{item.image}}"></img>					
+				</div>
+				<h2>{{item.name}}</h2>
+			</div>
+
+			<!--After login-->
+			<div class="home-item" ng-repeat="item in home.homeItems" ui-sref="{{item.state}}" ng-if="RCA.isLoggedIn">	
+
+				<div class="home-icon-container">
+					<!--count reminder-->
+					<div ng-if="RCA.isLoggedIn" ng-class="{visiblecount: item.reminder['count'] >= 0}" class="home-count" ng-bind="item.reminder['count']"></div>
+					<!--module icon-->					
+					<img ng-if="!item.reminder['image'] || item.reminder['image'] === '-1'" class="home-icon" ng-src="css/images/home/{{item.image}}"></img>	
+					<!--daily smiley-->
+					<img ng-if="item.reminder['image'] && item.reminder['image'] !== '-1'" class="home-item-reminder-mood" ng-src="css/images/moods/big/big-{{item.reminder['image']}}.png"></img>
+				</div>
+
+				<h2>{{item.name}}</h2>
+
+				<div class="item-details" ng-if="RCA.isLoggedIn" ui-sref="{{item.state}}">
+					<!--<p ng-if="item.reminder['text']" class="home-item-reminder-text" ng-bind="item.reminder.text | limit:20"></p>
+					<img ng-if="item.reminder['image'] && item.reminder['image'] !== '-1'" class="home-item-reminder-mood" ng-src="css/images/moods/small/{{item.reminder['image']}}.png"></img>-->
+				</div>
+			</div>
+		</div>	
+	</ion-content>
+</ion-view>

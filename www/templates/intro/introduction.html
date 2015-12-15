@@ -1,0 +1,42 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title" r="{{RCA.introModal.module}}IntroTitle"></h1>
+    <button class="button button-clear button-icon icon ion-android-close" ng-click="RCA.closeIntroModal()"></button>
+  </ion-header-bar>
+  <ion-pane>
+    <ion-slide-box on-slide-changed="RCA.slideHasChanged($index)">
+      <ion-slide ng-repeat="step in RCA.introModal.steps">
+        <div class="slider-image">
+          <img ng-src="css/images/introduction/{{RCA.introModal.module}}/{{$index}}.png">
+        </div>
+
+        <div class="slide-buttons">   
+          <!--last button-->
+          <button ng-show="RCA.introModal.reachedLast" class="button last-button" ng-click="RCA.closeIntroModal()" r="{{RCA.introModal.goTo}}">
+          </button>
+          <!--about-->
+          <button ng-show="RCA.introModal.reachedLast && RCA.introModal.module === 'forum'" class="button" ng-click="RCA.goToAbout()" r="introViewGuidelines">
+          </button>
+          <!--skip-->
+          <button ng-hide="RCA.introModal.reachedLast" class="button button-small button-clear" ng-click="RCA.closeIntroModal()" r="introSkip">
+          </button>
+          <!--next-->        
+          <button ng-hide="RCA.introModal.reachedLast" class="button button-small" ng-click="RCA.slideNext()">
+            <i class="icon ion-ios-arrow-forward"></i>
+          </button>    
+        </div>
+
+      </ion-slide>
+      <ion-slide ng-if="RCA.introModal.steps.length === 0">
+        <div class="slider-image">
+          <p r="_notImplemented"></p>
+        </div>
+        <div class="slide-buttons">
+          <button class="button last-button" ng-click="RCA.closeIntroModal()" r="{{RCA.introModal.goTo}}">
+          </button>
+        <div>
+      </ion-slide>
+    </ion-slide-box>
+
+  </ion-pane>
+</ion-modal-view>

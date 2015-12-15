@@ -1,0 +1,1 @@
+angular.module('ReConnectApp.filters', ['ngStorage','ReConnectApp.services','ReConnectApp.config']);
