@@ -8,12 +8,6 @@ angular.module('ReConnectApp.controllers')
 		'loginManager',
 		function($ionicHistory, $ionicPopup, $state, resources, storageService, loginManager){
 			var vm = this;
-			var reminders = [];
-			vm.info = info;
-			
-			vm.showLoginInfo = showLoginInfo;
-
-
 
 		    initCtrl();
 
@@ -27,30 +21,6 @@ angular.module('ReConnectApp.controllers')
 							: null;
 					}
 				});	
-			};
-			
-			function info(e, name, description){
-				var notImplemented = $ionicPopup.alert({
-					title: "Info - " + name,
-					template: resources.get(description)
-				});
-				notImplemented.then(function(){});
-			};
-
-			function showLoginInfo(requestedState) {
-				var comfirmPopup = $ionicPopup.confirm({
-					title: resources.get('homeLoginInfoTitle'),
-					template: resources.get("homeLoginInfo"),
-					okText: resources.get("homeGoToLogin"),
-					cancelText: resources.get("homeLoginLater"),
-					okType: '',
-					cancelType: 'secondary'
-				});
-				comfirmPopup.then(function(result){
-					if(result) {
-						$state.go('RCA.login', {requestedState: requestedState});
-					}
-				});
 			};
 	}
 ]);

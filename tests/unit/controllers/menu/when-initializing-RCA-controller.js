@@ -22,7 +22,7 @@ describe('when starting home', function (){
 	}));
 
 	it('should have items for home menu', function() {
-		expect(rcaCtrl.menuItems.length).toBe(7);
+		expect(rcaCtrl.menuItems.length).toBe(2);
 	});
 
 	it('should have items for home menu', function() {

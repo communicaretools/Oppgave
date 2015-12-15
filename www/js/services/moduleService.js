@@ -19,7 +19,6 @@ angular.module('ReConnectApp.services')
 					goToKey: 'goToAbout',
 					introSteps: [1]
 				}
-				
 			}
 		}
 
@@ -54,11 +53,13 @@ angular.module('ReConnectApp.services')
 		};
 
         initService();
+		
 		var service = {
 			forMenu: forMenu,
 			forHome: forHome,
 			forIntro: introData,
 			setupModules: setupModules
 		};
+		
 		return service;
-	}])
+	}]);

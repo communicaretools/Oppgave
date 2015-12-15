@@ -20,7 +20,7 @@ angular.module('ReConnectApp.services')
                 return deferred.promise;
             };
 
-            function getLoginStatus() {
+            function getLoginStatus(onSuccess) {
                 return isLoggedIn;
             }
 

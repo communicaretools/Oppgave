@@ -21,8 +21,4 @@ describe('when starting home', function (){
 	afterEach(inject(function($localStorage, $httpBackend){
 		$httpBackend.verifyNoOutstandingExpectation();
 	}));
-
-	it('should have items for home menu', function() {
-		expect(homeCtrl.homeItems.length).toBe(4);
-	});
 });

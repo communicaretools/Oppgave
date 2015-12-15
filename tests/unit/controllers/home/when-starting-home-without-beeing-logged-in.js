@@ -18,7 +18,4 @@ describe('when starting home', function (){
 		$httpBackend.verifyNoOutstandingExpectation();
 	}));
 
-	it('should have items for home menu', function() {
-		expect(homeCtrl.homeItems.length).toBe(4);
-	});
 });

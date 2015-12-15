@@ -14,6 +14,7 @@ angular.module("ReConnectApp.controllers")
 		function($log, $ionicHistory, $state, $stateParams, $scope, $ionicPopup, stayalive, storageService, loginManager, profileService, resources){
 			var vm = this;
             var requestedState = $stateParams.requestedState;
+            
             vm.credentials = {
                 'username': '',
                 'password': ''
@@ -28,11 +29,11 @@ angular.module("ReConnectApp.controllers")
                 $ionicHistory.clearHistory();
             };
 
-			var onError = function (e) {
+			function onError(e) {
                 $log.error(e.msg);
             };
             
-            var getUser = function(onResolved) {
+            function getUser(onResolved) {
                 profileService.get(function(result) {
                     storageService.setUser(result.data.userName);
                     storageService.local().user = result.data;
@@ -40,7 +41,7 @@ angular.module("ReConnectApp.controllers")
                 });
             };
 			
-            var onLoginSuccess = function (result) {
+            function onLoginSuccess(result) {
                 getUser(function(){
                     stayalive.setup();
                     if(requestedState){
@@ -51,14 +52,14 @@ angular.module("ReConnectApp.controllers")
                 });
                 
             };
-            var onLoginError = function(result) {
+            function onLoginError(result) {
                 vm.informationText = null;
                 $log.error(result);
                 if (result.status === 403) {
                     vm.informationText = resources.get('loginError');
                 }
             };
-            var onLogoutSuccess = function() {
+            function onLogoutSuccess() {
                 stayalive.stop();
                 storageService.setUser(null);
                 $state.go('RCA.home');

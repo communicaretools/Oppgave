@@ -22,9 +22,13 @@
 			<div ng-if="!RCA.isLoggedIn">
 				<p>Du er ikke logget inn ennå. Dette kan du gjøre med 
 				<b>brukernavn:</b> <i>FrederikBruker</i> og 
-				<b>passord:</b><i>Bruker</i> </p>
+				<b>passord:</b><i>Bruker</i></p>
 			</div>
-			<!--Before login-->
+	
+			<div ng-if="RCA.isLoggedIn">
+				<p>Legg gjerne til en knapp for å gå til registreringer</p>
+			</div>
+			
 
 		</div>	
 	</ion-content>
