@@ -26,6 +26,7 @@
 	"_options": "VALG",
 	"_inactivityWarningDescription": "Du har ikke vært aktiv på 12 minutter. Du vil bli logget ut om 3 minutter om du ikke trykker på OK.",
 	"_inactivityWarningTitle": "Varsel om utlogging",
+	"aboutAppDescription": "Denne test-appen er satt opp for å teste implementasjon av en ny feature i ionic med kommunikasjon med server.",
 	"aboutIntroTitle": "Om ReConnect hjelp",
 	"aboutToolTitle": "Om appen",
 	"aboutGuidelinesPart1": "Det er kun brukere som deltar i utprøving av ReConnect som kan bruke dette forumet. Du kan skrive innlegg i forum og kommentere andres innlegg. Alle som deltar med innlegg, er anonyme for hverandre. Du er kun synlig med ditt kallenavn og valgte ikon.",
